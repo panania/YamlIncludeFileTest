@@ -1,0 +1,48 @@
+# ASP.NET 
+# Build and test ASP.NET projects targeting .NET Framework
+# Build Definition - Deploy Steps
+
+steps:
+- script: |
+    echo 'In the Deploy Steps script'
+
+#- task: DotNetCoreCLI@2
+#  displayName: 'Publish Build to Staging ArtifactStagingDirectory'
+#   inputs:
+#   command: publish
+#    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+#    projects: '**/*.csproj'
+#    publishWebProjects: false
+#    modifyOutputPath: true
+#    zipAfterPublish: true
+
+#- task: PublishBuildArtifacts@1
+#  displayName: 'Publish Build Artifacts to Container'
+#  inputs:
+#    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#    ArtifactName: 'drop'
+#    publishLocation: Container
+
+#- task: AzureRmWebAppDeployment@4
+#  displayName: 'Deploy Azure App Service'
+#  inputs:
+#    ConnectionType: 'AzureRM'
+#    azureSubscription: 'Montage Development (c10e2822-7464-4050-b33f-1d2e8a5341e4)'
+#    appType: 'apiApp'
+#    WebAppName: 'appservicehealthcheck'
+#    ResourceGroupName: HcpAppServicesResources
+#    packageForLinux: '$(build.artifactStagingDirectory)/**/*Service*.zip'
+#    enableCustomDeployment: true
+#    DeploymentType: 'webDeploy'
+#    TakeAppOfflineFlag: false
+    
+# - task: apim@3
+  # displayName: 'API Management - Create/Update API '
+  # inputs:
+    # ConnectedServiceNameARM: 'Montage Development (c10e2822-7464-4050-b33f-1d2e8a5341e4)'
+    # ResourceGroupName: HcpAppServicesResources
+    # ApiPortalName: 'hcus-apimanagement-01'
+    # UseProductCreatedByPreviousTask: false
+    # swaggerlocation: 'http://appservicehealthcheck.hcus-appserviceenv-01.p.azurewebsites.net/swagger/v1/swagger.json'
+    # targetapi: appservicehealthcheck
+    # pathapi: HealthCheck

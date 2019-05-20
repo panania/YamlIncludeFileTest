@@ -1,0 +1,12 @@
+# ASP.NET 
+# Build and test ASP.NET projects targeting .NET Framework
+# Variable Template
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+- script: |
+    echo 'In the Variable script'
+  

@@ -1,0 +1,22 @@
+# ASP.NET 
+# Build and test ASP.NET projects targeting .NET Framework
+# Build Definition - Test Steps
+
+steps:
+- script: |
+    echo 'In the Test Steps script'
+    
+# - task: NuGetToolInstaller@0
+  # displayName: 'Get Nuget Package Installer'
+  # inputs:
+    # versionSpec: '4.6.0'
+
+# - task: DotNetCoreCLI@2
+  # displayName: 'Run Unit Tests'
+  # inputs:
+    # command: 'test'
+    # projects: '**/*Test*.csproj'
+    # arguments: '--configuration $(buildConfiguration)'
+    # testRunTitle: 'Testing'
+    # feedsToUse: 'select'
+    # versioningScheme: 'off'
